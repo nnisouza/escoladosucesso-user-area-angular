@@ -8,7 +8,9 @@
                 "link": "http://escoladosucesso/LINK_DA_SALA",
                 "linkCheckout": "http://escoladosucesso/CHECKOUT",
                 "price": 212
-            },
+            }
+        },
+        {
             "doUsuario": {
                 "id": 1,
                 "title": "Produto A",
@@ -17,7 +19,9 @@
                 "link": "http://escoladosucesso/LINK_DA_SALA",
                 "linkCheckout": "http://escoladosucesso/CHECKOUT",
                 "price": 212
-            },
+            }
+        },
+        {
             "doUsuario": {
                 "id": 1,
                 "title": "Produto A",

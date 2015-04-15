@@ -4,9 +4,9 @@ angular.module('userArea', ['ngRoute', 'mm.foundation', 'ngAnimate'])
 .controller('userAreaCtrl', function ($scope, $http) {
     $scope.cart = [];
     $http.get('info.json').success(function (response) {
-        $scope.courses = response;
+        $scope.courses = response.cursos[0].doUsuario;
 
-        console.log(response);
+        console.log($scope.courses.title);
     });
 //    $scope.addToCart = function (product) {
 //        var found = false;
@@ -39,4 +39,4 @@ angular.module('userArea', ['ngRoute', 'mm.foundation', 'ngAnimate'])
 //            }
 //        });
 //    };
-})
+});

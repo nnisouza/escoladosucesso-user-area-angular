@@ -33,10 +33,10 @@
             <div class="content">
                 <h2>Seus cursos</h2>
                 <ul class="clearfix" id="myOwn">
-                    <li>
+                    <li ng-repeat="course in courses">
                         <a href="../escoladosucesso-class-area/">
                             <img src="assets/img/mark/andrei.jpg" alt="">
-                            <h3>Você não sabia?</h3>
+                            <h3>{{courses.title}}</h3>
                         </a>
                     </li>
                 </ul>
@@ -48,13 +48,7 @@
                 </h2>
 
                 <ul class="clearfix" id="awaitingPayment">
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/andrei.jpg" alt="">
-                            <h3>Você não sabia?</h3>
-                        </a>
-                    </li>
-                    <li>
+                    <li ng-repeat="waitingcourse in courses">
                         <a href="#modal">
                             <img src="assets/img/mark/andrei.jpg" alt="">
                             <h3>Você não sabia?</h3>
