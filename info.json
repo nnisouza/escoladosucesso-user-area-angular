@@ -1,0 +1,32 @@
+{"cursos" : [
+        {
+            "doUsuario": {
+                "id": 1,
+                "title": "Produto A",
+                "description": "Mussarela, Abacaxi, Figo, PÃªssego e Ameixa em Calda.",
+                "image": "uploads/images/image.jps",
+                "link": "http://escoladosucesso/LINK_DA_SALA",
+                "linkCheckout": "http://escoladosucesso/CHECKOUT",
+                "price": 212
+            },
+            "doUsuario": {
+                "id": 1,
+                "title": "Produto A",
+                "description": "Mussarela, Abacaxi, Figo, PÃªssego e Ameixa em Calda.",
+                "image": "uploads/images/image.jps",
+                "link": "http://escoladosucesso/LINK_DA_SALA",
+                "linkCheckout": "http://escoladosucesso/CHECKOUT",
+                "price": 212
+            },
+            "doUsuario": {
+                "id": 1,
+                "title": "Produto A",
+                "description": "Mussarela, Abacaxi, Figo, PÃªssego e Ameixa em Calda.",
+                "image": "uploads/images/image.jps",
+                "link": "http://escoladosucesso/LINK_DA_SALA",
+                "linkCheckout": "http://escoladosucesso/CHECKOUT",
+                "price": 212
+            }
+
+        }
+]}

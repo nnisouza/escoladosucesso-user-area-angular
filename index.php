@@ -26,10 +26,10 @@
                     <hr>
                 </div>
             </div>
-            <div class="content">
+            <div class="content" ng-app="userArea" ng-controller="userAreaCtrl">
                 <h2>Seus cursos</h2>
                 <ul class="clearfix" id="myOwn">
-                    <li>
+                    <li ng-repeat="owncourse in courses">
                         <a href="../escoladosucesso-class-area/">
                             <img src="assets/img/mark/andrei.jpg" alt="">
                             <h3>Você não sabia?</h3>
@@ -145,10 +145,16 @@
 
     </body>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script src="http://pineconellc.github.io/angular-foundation/mm-foundation-tpls-0.3.1.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
     <script src="assets/js/vendor/cheet.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/app.js"></script>
     <script src="assets/js/vendor/remodal.js"></script>
 
 </html>
