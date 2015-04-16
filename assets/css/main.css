@@ -176,6 +176,7 @@ textarea {
     left: 50%;
     position: relative;
     border-radius: 5px;
+    text-align: center;
     -webkit-transform: translate(-50%, -20px);
     -moz-transform: translate(-50%, -20px);
     -ms-transform: translate(-50%, -20px);
