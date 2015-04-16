@@ -1,0 +1,11 @@
+{"doUsuario": [
+	{
+		"id": 1,
+        "title": "Você não sabia?",
+        "description": "Curso de história contemporânea, na era pré digital.",
+        "image": "assets/img/mark/andrei.jpg",
+        "link": "http://escoladosucesso/LINK_DA_SALA",
+        "linkCheckout": "http://escoladosucesso/CHECKOUT",
+        "price": 212
+	}
+]}

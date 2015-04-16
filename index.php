@@ -27,99 +27,46 @@
                 </div>
             </div>
             <div class="content" ng-app="userArea" ng-controller="userAreaCtrl">
-                <h2>Seus cursos</h2>
-                <ul class="clearfix" id="myOwn">
-                    <li ng-repeat="course in courses">
-                        <a href="../escoladosucesso-class-area/">
-                            <img src="assets/img/mark/andrei.jpg" alt="">
-                            <h3>{{courses.doUsuario.title}}</h3>
-                        </a>
-                    </li>
-                </ul>
+                <div ng-hide="doUsuario.length < 1">
+                    <h2>Seus cursos</h2>
+                    <ul class="clearfix" id="myOwn">
+                        <li ng-repeat="curso in doUsuario">
+                            <a href="{{curso.link}}">
+                                <img src="{{curso.image}}" alt="">
+                                <h3>{{curso.title}}</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr/>
+                </div>
+                <div ng-hide="aguardandoPagamento.length < 1">
+                    <h2>
+                        Aguardando confirmação do pagamento
+                    </h2>
 
-                <hr/>
-
-                <h2>
-                    Aguardando confirmação do pagamento
-                </h2>
-
-                <ul class="clearfix" id="awaitingPayment">
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/andrei.jpg" alt="">
-                            <h3>Você não sabia?</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/andrei.jpg" alt="">
-                            <h3>Você não sabia?</h3>
-                        </a>
-                    </li>
-                </ul>
-
-                <hr/>
-
-                <h2>
-                    Outros cursos que você poderia gostar
-                </h2>
-
-                <ul id="theOthers">
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/wizard2.jpg" alt="">
-                            <h3>Fórmula do milhão</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/wizard.jpg" alt="">
-                            <h3>Fórmula do milhão</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/wizard2.jpg" alt="">
-                            <h3>I'm a Wizard!</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/wizard.jpg" alt="">
-                            <h3>Fórmula do milhão</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/wizard2.jpg" alt="">
-                            <h3>Fórmula do milhão</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/wizard.jpg" alt="">
-                            <h3>Fórmula do milhão</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/wizard2.jpg" alt="">
-                            <h3>Fórmula do milhão</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/wizard.jpg" alt="">
-                            <h3>Fórmula do milhão</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#modal">
-                            <img src="assets/img/mark/wizard2.jpg" alt="">
-                            <h3>Fórmula do milhão</h3>
-                        </a>
-                    </li>
-                </ul>
+                    <ul class="clearfix" id="awaitingPayment">
+                        <li ng-repeat="curso in aguardandoPagamento">
+                            <a href="#modal">
+                                <img src="{{curso.image}}" alt="">
+                                <h3>{{curso.title}}</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr/>
+                </div>
+                <div ng-hide="daEscola.length < 1">
+                    <h2>
+                        Outros cursos que você poderia gostar
+                    </h2>
+                    <ul id="theOthers">
+                        <li ng-repeat="curso in daEscola">
+                            <a href="#modal" ng-click="cursoToModal(curso)">
+                                <img src="{{curso.image}}" alt="">
+                                <h3>{{curso.title}}</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="footer">
                 <p class="copyrights">
@@ -132,7 +79,7 @@
         </div>
 
         <div class="remodal" data-remodal-id="modal">
-            <h1>Fórmula do Milhão</h1>
+            <h1 ng-repeat="curso in modal">{{curso.title}}</h1>
             <p class="clearfix">
               <img src="assets/img/mark/wizard.jpg" alt="">
               Descrição super, mas extremamente, convidativa do curso.
