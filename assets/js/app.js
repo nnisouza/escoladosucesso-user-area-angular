@@ -17,4 +17,7 @@ angular.module('userArea', ['ngRoute', 'mm.foundation', 'ngAnimate'])
         $scope.modal.push(curso);
         console.log(curso);
     }
+    $scope.closeModal = function() {
+        $scope.modal = [];
+    }
 });

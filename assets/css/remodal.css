@@ -20,12 +20,6 @@ html.remodal-is-locked {
 
 /* Anti FOUC */
 
-.remodal,
-[data-remodal-id] {
-    visibility: hidden;
-}
-
-/* Necessary styles of the overlay */
 
 .remodal-overlay {
     position: fixed;
@@ -34,8 +28,6 @@ html.remodal-is-locked {
     right: -5000px;
     bottom: -5000px;
     left: -5000px;
-
-    display: none;
 }
 
 /* Necessary styles of the wrapper */
@@ -48,7 +40,6 @@ html.remodal-is-locked {
     bottom: 0;
     left: 0;
 
-    display: none;
     overflow: auto;
 
     text-align: center;
@@ -124,12 +115,11 @@ body.remodal-is-active .remodal-bg {
     -o-transition: opacity 0.2s ease-out;
     transition: opacity 0.2s ease-out;
 
-    opacity: 0;
+    opacity: 1;
     background: rgba(33, 36, 46, 0.95);
 }
-
-body.remodal-is-active .remodal-overlay {
-    opacity: 1;
+.remodal-overlay.ng-hide {
+    opacity: 0;
 }
 
 /* Default theme styles of the modal dialog */
@@ -142,22 +132,37 @@ body.remodal-is-active .remodal-overlay {
     box-sizing: border-box;
     width: 100%;
     min-height: 100%;
-    padding: 35px;
+    padding: 55px 35px 35px;
 
-    -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0.2s ease-out;
-    -moz-transition: -moz-transform 0.2s ease-out, opacity 0.2s ease-out;
-    -o-transition: -o-transform 0.2s ease-out, opacity 0.2s ease-out;
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    -webkit-transition: -webkit-transform 0.4s ease-out, opacity 0.4s ease-out;
+    -moz-transition: -moz-transform 0.42s ease-out, opacity 0.4s ease-out;
+    -o-transition: -o-transform 0.4s ease-out, opacity 0.4s ease-out;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+
+    opacity: 1;
+    color: #182a3c;
+    background: #f4f4f4;
+    background-clip: padding-box;
+}
+.remodal-wrapper.ng-hide {
+    opacity: 0;
     -webkit-transform: scale(0.95);
     -moz-transform: scale(0.95);
     -ms-transform: scale(0.95);
     -o-transform: scale(0.95);
     transform: scale(0.95);
-
-    opacity: 0;
-    color: #182a3c;
-    background: #f4f4f4;
-    background-clip: padding-box;
+}
+.remodal .textHolder{
+    display: table;
+}
+.remodal .textHolder>div{
+    display: table-cell;
+    vertical-align: middle;
 }
 .remodal h1{
     color: #1abc9c;
@@ -245,13 +250,13 @@ body.remodal-is-active .remodal {
 
 .remodal-confirm,
 .remodal-cancel {
-    font-size: 10pt;
+    font-size: 12pt;
 
     display: inline-block;
 
-    width: 120px;
-    margin: 0 0 5px 0;
-    padding: 9px 0;
+    width: auto;
+    margin: 20px 0 0;
+    padding: 10px;
 
     cursor: pointer;
     -webkit-transition: all 0.2s ease-out;

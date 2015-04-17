@@ -7,5 +7,14 @@
         "link": "http://escoladosucesso/LINK_DA_SALA",
         "linkCheckout": "http://escoladosucesso/CHECKOUT",
         "price": 212
+	},
+    {
+		"id": 2,
+        "title": "Curso qualquer",
+        "description": "Curso de como ganhar dinheiro na internet.",
+        "image": "assets/img/mark/wizard.jpg",
+        "link": "http://escoladosucesso/LINK_DA_SALA",
+        "linkCheckout": "http://escoladosucesso/CHECKOUT",
+        "price": 212
 	}
 ]}

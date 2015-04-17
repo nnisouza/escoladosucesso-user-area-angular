@@ -12,7 +12,7 @@
 		?>
 
     </head>
-    <body>
+    <body ng-app="userArea" ng-controller="userAreaCtrl">
         <div class="wrapper">
             <div class="header">
                 <div class="content">
@@ -26,7 +26,7 @@
                     <hr>
                 </div>
             </div>
-            <div class="content" ng-app="userArea" ng-controller="userAreaCtrl">
+            <div class="content">
                 <div ng-hide="doUsuario.length < 1">
                     <h2>Seus cursos</h2>
                     <ul class="clearfix" id="myOwn">
@@ -46,7 +46,7 @@
 
                     <ul class="clearfix" id="awaitingPayment">
                         <li ng-repeat="curso in aguardandoPagamento">
-                            <a href="#modal">
+                            <a href="javascript:void(0);" ng-click="cursoToModal(curso)">
                                 <img src="{{curso.image}}" alt="">
                                 <h3>{{curso.title}}</h3>
                             </a>
@@ -60,7 +60,7 @@
                     </h2>
                     <ul id="theOthers">
                         <li ng-repeat="curso in daEscola">
-                            <a href="#modal" ng-click="cursoToModal(curso)">
+                            <a href="javascript:void(0);" ng-click="cursoToModal(curso)">
                                 <img src="{{curso.image}}" alt="">
                                 <h3>{{curso.title}}</h3>
                             </a>
@@ -76,19 +76,29 @@
                     <a href="http://rion.hol.es/" target="_blank">RION</a>
                 </p>
             </div>
+            <div class="remodal-overlay" ng-hide="modal.length < 1"></div>
+            <div class="remodal-wrapper" ng-hide="modal < 1">
+                <div class="remodal" data-remodal-id="modal" style="visibility: visible;" ng-repeat="modal in modal">
+                    <div class="modalHolder">
+                        <div class="imageHolder">
+                            <img src="{{modal.image}}" alt="">
+                        </div>
+                        <div class="textHolder">
+                            <div>
+                                <h1>{{modal.title}}</h1>
+                                <p class="clearfix">
+                                    {{modal.description}}
+                                </p>
+                                <a class="remodal-confirm" href="{{modal.linkcheckout}}">Comprar curso - {{modal.price | currency: 'R$ '}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <a href="javascript:void(0);" class="remodal-close" ng-click="closeModal()"></a>
+                </div>
+            </div>
         </div>
 
-        <div class="remodal" data-remodal-id="modal">
-            <h1 ng-repeat="curso in modal">{{curso.title}}</h1>
-            <p class="clearfix">
-              <img src="assets/img/mark/wizard.jpg" alt="">
-              Descrição super, mas extremamente, convidativa do curso.
-              Descrição super, mas extremamente, convidativa do curso.
-              Descrição super, mas extremamente, convidativa do curso.
-            </p>
-            <br>
-                <a class="remodal-confirm" href="#">Comprar</a>
-        </div>
 
     </body>
 
@@ -101,6 +111,6 @@
     <script src="assets/js/vendor/cheet.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/vendor/remodal.js"></script>
+<!--    <script src="assets/js/vendor/remodal.js"></script>-->
 
 </html>
